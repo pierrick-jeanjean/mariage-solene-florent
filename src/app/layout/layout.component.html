@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <header class="header">
+    <div class="logo">
+      <h1 class="logo-title" [routerLink]="['/']">Solène & Florent</h1>
+      <h1 class="logo-title-alt" [routerLink]="['/']">SF</h1>
+    </div>
+    <div class="menu">
+      <nav class="menu-navbar">
+        <ul>
+          <li>
+            <a [routerLink]="['/planning']" routerLinkActive="active">Planning</a>
+          </li>
+          <li>
+            <a [routerLink]="['/covoiturages']" routerLinkActive="active">Covoiturages</a>
+          </li>
+          <li>
+            <a [routerLink]="['/logements']" routerLinkActive="active">Logements</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="menu-button" (click)="this.toggleMenu()">
+        <div class="menu-button-icon" [class.opened]="menuOpened"></div>
+      </button>
+    </div>
+  </header>
+  <div *ngIf="this.router.url === '/'" class="content">
+    <button class="main-button" [routerLink]="['planning']">
+      Ils se marient !
+    </button>
+  </div>
+  <div *ngIf="this.router.url !== '/'" class="other-page">
+    <router-outlet></router-outlet>
+  </div>
+</div>
