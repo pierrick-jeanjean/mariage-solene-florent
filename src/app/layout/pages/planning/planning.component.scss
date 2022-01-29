@@ -20,6 +20,7 @@
 .planning-item {
   width: 100%;
   position: relative;
+  margin-bottom: 15px;
   &:nth-child(odd) {
     padding-right: calc(50% + 30px);
     text-align: right;
@@ -62,6 +63,9 @@
   }
 }
 @media (max-width: 768px) {
+  .planning-section {
+    padding: 20px;
+  }
   .planning-items {
     &::before {
       left: 7px;
