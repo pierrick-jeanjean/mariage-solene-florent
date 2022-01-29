@@ -2,7 +2,7 @@
 .planning-section {
   min-height: 100vh;
   background-color: #383838;
-  padding: 20px;
+  padding: 40px;
 }
 .planning-items {
   display: flex;
@@ -59,7 +59,6 @@
     color: #ffffd4;
     font-size: 16px;
     font-weight: 300;
-    text-align: justify;
   }
 }
 @media (max-width: 768px) {

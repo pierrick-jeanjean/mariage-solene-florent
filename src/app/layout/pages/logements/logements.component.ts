@@ -12,4 +12,8 @@ export class LogementsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openLink(url: string): void {
+    window.open(url, '_blank');
+  }
+
 }

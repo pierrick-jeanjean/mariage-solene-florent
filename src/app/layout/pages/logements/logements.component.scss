@@ -1,10 +1,10 @@
 .logements-section {
   background-color: #383838;
-  min-height: calc(100vh - 110px);
-  padding: 20px;
+  min-height: calc(100vh - 150px);
+  padding: 40px;
   .logements-items {
     display: grid;
-    min-height: calc(100vh - 110px);
+    min-height: calc(100vh - 150px);
     grid-gap: 20px;
     .logements-item {
       background-color: #ffffd4;
@@ -16,8 +16,14 @@
         background-color: #006338;
         font-weight: 500;
         font-size: 25px;
-        padding: 10px 0px;
+        padding: 7px 0px;
         color: #ffffd4;
+      }
+      &:hover {
+        cursor: pointer;
+        h3 {
+          background-color: #b36700;
+        }
       }
       .logements-item-image {
         height: 80%;
@@ -76,7 +82,7 @@
           url("/assets/chateau-du-brossay.jpg");
         }
         /* Set a specific height */
-        height: 80%;
+        height: 82%;
         /* Position nd center the image to scale nicely on all screens */
         background-position: center;
         background-repeat: no-repeat;
