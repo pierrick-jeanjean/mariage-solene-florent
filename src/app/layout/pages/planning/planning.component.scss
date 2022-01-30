@@ -12,7 +12,7 @@
     content: "";
     position: absolute;
     width: 1px;
-    height: 100%;
+    height: 98.5%;
     background-color: #b36700;
     left: calc(50% + 1px);
   }
@@ -37,13 +37,13 @@
   position: absolute;
   left: calc(50% - 8px);
   border-radius: 50%;
-  top: 10px;
+  top: 0px;
 }
 .planning-date {
   font-size: 18px;
   color: #b36700;
   font-weight: bold;
-  margin: 6px 0 15px;
+  margin: -2px 0 15px;
 }
 .planning-content {
   background-color: #006338;

@@ -5,7 +5,7 @@
   .logements-items {
     display: grid;
     min-height: calc(100vh - 150px);
-    grid-gap: 20px;
+    grid-gap: 27px;
     .logements-item {
       background-color: #ffffd4;
       min-height: 200px;
@@ -26,7 +26,6 @@
         }
       }
       .logements-item-image {
-        height: 80%;
         &.rives-nature {
           background-image: radial-gradient(
             ellipse at center,
@@ -82,8 +81,8 @@
           url("/assets/chateau-du-brossay.jpg");
         }
         /* Set a specific height */
-        height: 82%;
-        /* Position nd center the image to scale nicely on all screens */
+        height: calc(100% - 27px);
+        /* Position and center the image to scale nicely on all screens */
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
