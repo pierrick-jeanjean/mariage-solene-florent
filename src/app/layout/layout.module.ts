@@ -7,6 +7,7 @@ import { PlanningComponent } from './pages/planning/planning.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LogementsComponent } from './pages/logements/logements.component';
 import { CovoituragesComponent } from './pages/covoiturages/covoiturages.component';
+import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CovoituragesComponent } from './pages/covoiturages/covoiturages.compone
     PlanningComponent,
     HomeComponent,
     LogementsComponent,
-    CovoituragesComponent
+    CovoituragesComponent,
+    RestaurantsComponent
   ],
   imports: [
     CommonModule,

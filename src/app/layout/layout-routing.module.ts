@@ -5,29 +5,39 @@ import { CovoituragesComponent } from './pages/covoiturages/covoiturages.compone
 import { HomeComponent } from './pages/home/home.component';
 import { LogementsComponent } from './pages/logements/logements.component';
 import { PlanningComponent } from './pages/planning/planning.component';
+import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 
 const routes: Routes = [
   {
-    path: '', component: LayoutComponent,
+    path: '',
+    component: LayoutComponent,
     children: [
       {
-        path: '', component: HomeComponent
+        path: '',
+        component: HomeComponent,
       },
       {
-        path: 'planning', component: PlanningComponent
+        path: 'planning',
+        component: PlanningComponent,
       },
       {
-        path: 'covoiturages', component: CovoituragesComponent
+        path: 'covoiturages',
+        component: CovoituragesComponent,
       },
       {
-        path: 'logements', component: LogementsComponent
-      }
-    ]
-  }
+        path: 'restaurants',
+        component: RestaurantsComponent,
+      },
+      {
+        path: 'logements',
+        component: LogementsComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class LayoutRoutingModule { }
+export class LayoutRoutingModule {}

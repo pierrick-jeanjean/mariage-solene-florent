@@ -1,7 +1,7 @@
 <header class="header">
   <div class="logo">
     <h1 class="logo-title" [routerLink]="['/']">Solène & Florent</h1>
-    <h1 class="logo-title-alt" [routerLink]="['/']">SF</h1>
+    <h1 class="logo-title-alt" [routerLink]="['/']">S<span style="font-size: 18px; margin: 0 1px">&</span>F</h1>
   </div>
   <div class="menu">
     <nav class="menu-navbar">
@@ -20,6 +20,11 @@
         <li>
           <a [routerLink]="['/covoiturages']" routerLinkActive="active"
             >Covoiturages</a
+          >
+        </li>
+        <li>
+          <a [routerLink]="['/restaurants']" routerLinkActive="active"
+            >Restaurants</a
           >
         </li>
         <li>
@@ -48,6 +53,11 @@
         <li>
           <a [routerLink]="['/covoiturages']" routerLinkActive="active">
             <span class="zmdi zmdi-car-taxi"></span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/restaurants']" routerLinkActive="active">
+            <span class="zmdi zmdi-cutlery"></span>
           </a>
         </li>
         <li>
