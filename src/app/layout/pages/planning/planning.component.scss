@@ -2,7 +2,7 @@
 .planning-section {
   min-height: 100vh;
   background-color: #383838;
-  padding: 40px;
+  padding: 20px;
 }
 .planning-items {
   display: flex;
@@ -41,23 +41,23 @@
 }
 .planning-date {
   font-size: 18px;
-  color: #b36700;
+  color: #ffffd4;
   font-weight: bold;
   margin: -2px 0 15px;
 }
 .planning-content {
-  background-color: #006338;
+  background-color: #ffffd4;
   padding: 15px;
   border-radius: 5px;
   h3 {
-    color: #ffffd4;
+    color: #006338;
     margin: 0 0 5px;
     font-weight: 500;
     font-size: 26px;
     font-family: "Tangerine", cursive;
   }
   p {
-    color: #ffffd4;
+    color: #006338;
     font-size: 16px;
     font-weight: 300;
   }

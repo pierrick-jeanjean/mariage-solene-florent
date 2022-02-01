@@ -1,11 +1,12 @@
 .header {
-  background-color: #ffffd4;
+  background-color: #006338;
   height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 20px;
   align-items: center;
+  border-bottom: 2px solid #ffffd4;
   .logo {
     .logo-title {
       @media (max-width: 768px) {
@@ -14,7 +15,7 @@
       font-family: "Tangerine", cursive;
       font-size: 30px;
       text-transform: capitalize;
-      color: #006338;
+      color: #ffffd4;
       &:hover {
         cursor: pointer;
       }
@@ -26,7 +27,7 @@
       font-family: "Tangerine", cursive;
       font-size: 30px;
       text-transform: capitalize;
-      color: #006338;
+      color: #ffffd4;
       &:hover {
         cursor: pointer;
       }
@@ -47,7 +48,7 @@
           margin-left: 20px;
           a {
             text-decoration: none;
-            color: #006338;
+            color: #ffffd4;
             &.active {
               font-weight: bold;
               color: #b36700;
@@ -70,7 +71,7 @@
           margin-left: 30px;
           a {
             text-decoration: none;
-            color: #006338;
+            color: #ffffd4;
             font-size: 25px;
             &.active {
               font-weight: bold;
