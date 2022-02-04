@@ -4,81 +4,73 @@
   padding: 20px;
   .logements-items {
     display: grid;
-    min-height: calc(100vh - 150px);
-    grid-gap: 27px;
+    grid-gap: 30px;
     .logements-item {
-      background-color: #ffffd4;
-      min-height: 200px;
+      min-height: 210px;
       h3 {
         text-align: center;
         font-family: "Tangerine", cursive;
         margin: 0;
-        background-color: #006338;
+        background-color: #ffffd4;
         font-weight: 500;
         font-size: 25px;
         padding: 7px 0px;
-        color: #ffffd4;
-      }
-      &:hover {
-        cursor: pointer;
-        h3 {
-          background-color: #b36700;
-        }
+        color: #006338;
       }
       .logements-item-image {
         &.rives-nature {
           background-image: radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) 23%,
-            rgba(0, 0, 0, 0.65) 100%
-          ),
-          url("/assets/rives-nature.jpg");
+              ellipse at center,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0) 23%,
+              rgba(0, 0, 0, 0.65) 100%
+            ),
+            url("/assets/rives-nature.jpg");
         }
         &.relais-des-arcandiers {
           background-image: radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) 23%,
-            rgba(0, 0, 0, 0.65) 100%
-          ),
-          url("/assets/relais-des-arcandiers.jpg");
+              ellipse at center,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0) 23%,
+              rgba(0, 0, 0, 0.65) 100%
+            ),
+            url("/assets/relais-des-arcandiers.jpg");
         }
         &.chambre-hotes-cahardet {
           background-image: radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) 23%,
-            rgba(0, 0, 0, 0.65) 100%
-          ),
-          url("/assets/chambre-hotes-cahardet.jpg");
+              ellipse at center,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0) 23%,
+              rgba(0, 0, 0, 0.65) 100%
+            ),
+            url("/assets/chambre-hotes-cahardet.jpg");
         }
         &.gite-des-hirondelles {
           background-image: radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) 23%,
-            rgba(0, 0, 0, 0.65) 100%
-          ),
-          url("/assets/gite-des-hirondelles.jpg");
+              ellipse at center,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0) 23%,
+              rgba(0, 0, 0, 0.65) 100%
+            ),
+            url("/assets/gite-des-hirondelles.jpg");
         }
         &.clos-du-chene {
           background-image: radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) 23%,
-            rgba(0, 0, 0, 0.65) 100%
-          ),
-          url("/assets/clos-du-chene.jpg");
+              ellipse at center,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0) 23%,
+              rgba(0, 0, 0, 0.65) 100%
+            ),
+            url("/assets/clos-du-chene.jpg");
         }
         &.chateau-du-brossay {
           background-image: radial-gradient(
-            ellipse at center,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) 23%,
-            rgba(0, 0, 0, 0.65) 100%
-          ),
-          url("/assets/chateau-du-brossay.jpg");
+              ellipse at center,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0) 23%,
+              rgba(0, 0, 0, 0.65) 100%
+            ),
+            url("/assets/chateau-du-brossay.jpg");
         }
         /* Set a specific height */
         height: calc(100% - 27px);
@@ -86,6 +78,31 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+      }
+      &:hover {
+        cursor: pointer;
+        h3 {
+          background-color: #b36700;
+          color: #ffffd4;
+        }
+        .rives-nature {
+          background-image: url("/assets/rives-nature-hover.jpg");
+        } 
+        .relais-des-arcandiers {
+          background-image: url("/assets/relais-des-arcandiers-hover.jpg");
+        }
+        .chambre-hotes-cahardet {
+          background-image: url("/assets/chambre-hotes-cahardet-hover.jpg");
+        }
+        .gite-des-hirondelles {
+          background-image: url("/assets/gite-des-hirondelles-hover.jpg");
+        }
+        .clos-du-chene {
+          background-image: url("/assets/clos-du-chene-hover.jpg");
+        }
+        .chateau-du-brossay {
+          background-image: url("/assets/chateau-du-brossay-hover.jpg");
+        }
       }
     }
   }

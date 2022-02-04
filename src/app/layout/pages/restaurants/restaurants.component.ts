@@ -12,4 +12,8 @@ export class RestaurantsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openLink(url: string): void {
+    window.open(url, '_blank');
+  }
+
 }

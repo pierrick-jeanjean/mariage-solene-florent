@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout.component';
 import { CovoituragesComponent } from './pages/covoiturages/covoiturages.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LogementsComponent } from './pages/logements/logements.component';
+import { PageSecreteComponent } from './pages/page-secrete/page-secrete.component';
 import { PlanningComponent } from './pages/planning/planning.component';
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 
@@ -32,6 +33,10 @@ const routes: Routes = [
         path: 'logements',
         component: LogementsComponent,
       },
+      {
+        path: 'page-secrete',
+        component: PageSecreteComponent
+      }
     ],
   },
 ];

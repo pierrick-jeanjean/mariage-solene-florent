@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LogementsComponent } from './pages/logements/logements.component';
 import { CovoituragesComponent } from './pages/covoiturages/covoiturages.component';
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
+import { PageSecreteComponent } from './pages/page-secrete/page-secrete.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { RestaurantsComponent } from './pages/restaurants/restaurants.component'
     HomeComponent,
     LogementsComponent,
     CovoituragesComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    PageSecreteComponent
   ],
   imports: [
     CommonModule,
