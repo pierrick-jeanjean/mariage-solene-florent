@@ -1,7 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-root',
-  template: `<router-outlet></router-outlet>`,
+  template: `
+    <ngx-spinner
+      bdColor="#383838"
+      size="large"
+      color="#ffffd4"
+      type="ball-newton-cradle"
+      [fullScreen]="true"
+      [disableAnimation]="disableAnimation"
+    >
+      <p style="color: #ffffd4; font-size: 24px;">Chargement...</p>
+    </ngx-spinner>
+    <router-outlet></router-outlet>
+  `,
 })
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  
+  disableAnimation = true;
+  
+  constructor(private ngxSpinnerService: NgxSpinnerService) {
+    this.ngxSpinnerService.show();
+  }
+  
+  ngOnInit() {
+    setTimeout(() => {
+      this.disableAnimation = false;
+      this.ngxSpinnerService.hide();
+    }, 2000);
+  }
+}

@@ -1,5 +1,5 @@
 .logements-section {
-  background-color: #383838;
+  background-color: #fff;
   min-height: calc(100vh - 112px);
   padding: 20px;
   .logements-items {
@@ -9,11 +9,11 @@
       min-height: 210px;
       h3 {
         text-align: center;
-        font-family: "Tangerine", cursive;
+        font-family: "EB Garamond", serif;
         margin: 0;
-        background-color: #ffffd4;
+        background-color: #fff;
+        border:1px solid #006338;
         font-weight: 500;
-        font-size: 25px;
         padding: 7px 0px;
         color: #006338;
       }
@@ -25,7 +25,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/rives-nature.jpg");
+            url("/assets/rives-nature-hover.jpg");
         }
         &.relais-des-arcandiers {
           background-image: radial-gradient(
@@ -34,7 +34,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/relais-des-arcandiers.jpg");
+            url("/assets/relais-des-arcandiers-hover.jpg");
         }
         &.chambre-hotes-cahardet {
           background-image: radial-gradient(
@@ -43,7 +43,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/chambre-hotes-cahardet.jpg");
+            url("/assets/chambre-hotes-cahardet-hover.jpg");
         }
         &.gite-des-hirondelles {
           background-image: radial-gradient(
@@ -52,7 +52,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/gite-des-hirondelles.jpg");
+            url("/assets/gite-des-hirondelles-hover.jpg");
         }
         &.clos-du-chene {
           background-image: radial-gradient(
@@ -61,7 +61,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/clos-du-chene.jpg");
+            url("/assets/clos-du-chene-hover.jpg");
         }
         &.chateau-du-brossay {
           background-image: radial-gradient(
@@ -70,7 +70,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/chateau-du-brossay.jpg");
+            url("/assets/chateau-du-brossay-hover.jpg");
         }
         /* Set a specific height */
         height: calc(100% - 27px);

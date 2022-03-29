@@ -1,8 +1,8 @@
 /* responsive */
 .planning-section {
   min-height: 100vh;
-  background-color: #383838;
-  padding: 20px;
+  background-color: #fff;
+  padding: 30px;
 }
 .planning-items {
   display: flex;
@@ -12,8 +12,8 @@
     content: "";
     position: absolute;
     width: 1px;
-    height: 98.5%;
-    background-color: #b36700;
+    height: 100%;
+    background-color: #006338;
     left: calc(50% + 1px);
   }
 }
@@ -23,7 +23,6 @@
   margin-bottom: 15px;
   &:nth-child(odd) {
     padding-right: calc(50% + 30px);
-    text-align: right;
   }
   &:nth-child(even) {
     padding-left: calc(50% + 30px);
@@ -32,8 +31,8 @@
 .planning-dot {
   height: 16px;
   width: 16px;
-  background-color: #b36700;
-  border: 1px solid #ffffd4;
+  background-color: #006338;
+  border: 1px solid #006338;
   position: absolute;
   left: calc(50% - 8px);
   border-radius: 50%;
@@ -41,25 +40,70 @@
 }
 .planning-date {
   font-size: 18px;
-  color: #ffffd4;
+  color: #006338;
   font-weight: bold;
+  font-size: 26px;
   margin: -2px 0 15px;
+  font-family: "Tangerine", cursive;
 }
 .planning-content {
-  background-color: #ffffd4;
-  padding: 15px;
-  border-radius: 5px;
-  h3 {
-    color: #006338;
-    margin: 0 0 5px;
-    font-weight: 500;
-    font-size: 26px;
-    font-family: "Tangerine", cursive;
+  background-color: #fff;
+  border: 1px solid #006338;
+  display: flex;
+  min-height: 200px;
+  @media (min-width: 769px) {
+    flex-direction: row;
   }
-  p {
-    color: #006338;
-    font-size: 16px;
-    font-weight: 300;
+  @media (max-width: 768px) {
+    min-height: 400px;
+    flex-direction: column-reverse;
+  }
+  .planning-content-text {
+    padding: 20px;
+    h3 {
+      color: #006338;
+      margin: 0 0 5px;
+      font-weight: 500;
+      font-family: "EB Garamond", serif;
+    }
+    p {
+      color: #006338;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .zmdi {
+      margin-right: 10px;
+    }
+  }
+  .planning-content-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (min-width: 769px) {
+      min-width: 50%;
+    }
+    @media (max-width: 768px) {
+      min-height: 70%;
+    }
+    flex-grow: 1;
+    &.manoir {
+      background-image: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 23%,
+        rgba(0, 0, 0, 0.65) 100%
+      ),
+      url("/assets/manoir.jpg");
+    }
+    &.presbytere {
+      background-image: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 23%,
+        rgba(0, 0, 0, 0.65) 100%
+      ),
+      url("/assets/presbytere.jpg");
+    }
   }
 }
 @media (max-width: 768px) {

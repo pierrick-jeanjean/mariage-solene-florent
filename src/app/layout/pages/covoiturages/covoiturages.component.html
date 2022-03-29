@@ -1,3 +1,15 @@
 <section>
-    
+    <div style="padding: 20px" *ngIf="covoiturages$ | async as covoiturages">
+        <ng-container *ngFor="let covoiturage of covoiturages">
+            <div class="covoiturage-div">
+                <div class="covoiturage-div-text">
+                    <h3>De {{covoiturage.startLocation}} <br class="only-mobile"/> le {{covoiturage.startDate | date:'shortDate'}} à {{covoiturage.startTime}}</h3>
+                    Nombre de places : {{covoiturage.nbPassengers}} / {{covoiturage.nbPassengersTotal}} <br/>
+                    <br/>
+                    {{covoiturage.endLocation}} le {{covoiturage.endDate | date:'shortDate'}} à {{covoiturage.endTime}}      
+                </div>
+                <div class="covoiturage-div-image" [ngClass]="covoiturage.image"></div>
+            </div>
+        </ng-container>
+    </div>    
 </section>

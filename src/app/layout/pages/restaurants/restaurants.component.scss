@@ -1,5 +1,5 @@
 .restaurants-section {
-  background-color: #383838;
+  background-color: #fff;
   min-height: calc(100vh - 112px);
   padding: 20px;
   .restaurants-items {
@@ -9,11 +9,11 @@
       min-height: 210px;
       h3 {
         text-align: center;
-        font-family: "Tangerine", cursive;
+        font-family: "EB Garamond", serif;
         margin: 0;
-        background-color: #ffffd4;
+        background-color: #fff;
+        border:1px solid #006338;
         font-weight: 500;
-        font-size: 25px;
         padding: 7px 0px;
         color: #006338;
       }
@@ -25,7 +25,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/creperie-hermine.jpg");
+            url("/assets/creperie-hermine-hover.jpg");
         }
         &.table-bechet {
           background-image: radial-gradient(
@@ -34,7 +34,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/table-bechet.jpg");
+            url("/assets/table-bechet-hover.jpg");
         }
         &.rusty {
           background-image: radial-gradient(
@@ -43,7 +43,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/rusty.jpg");
+            url("/assets/rusty-hover.jpg");
         }
         &.surf-josephine {
           background-image: radial-gradient(
@@ -52,7 +52,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/surf-josephine.jpg");
+            url("/assets/surf-josephine-hover.jpg");
         }
         &.bistrot-houle {
           background-image: radial-gradient(
@@ -61,7 +61,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/bistrot-houle.jpg");
+            url("/assets/bistrot-houle-hover.jpg");
         }
         &.ville-carree {
           background-image: radial-gradient(
@@ -70,7 +70,7 @@
               rgba(0, 0, 0, 0) 23%,
               rgba(0, 0, 0, 0.65) 100%
             ),
-            url("/assets/ville-carree.jpg");
+            url("/assets/ville-carree-hover.jpg");
         }
         /* Set a specific height */
         height: calc(100% - 27px);
@@ -83,7 +83,7 @@
         cursor: pointer;
         h3 {
           background-color: #b36700;
-          color: #ffffd4;
+          color: #fff;
         }
         .creperie-hermine {
           background-image: url("/assets/creperie-hermine-hover.jpg");

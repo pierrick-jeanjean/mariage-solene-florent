@@ -9,6 +9,7 @@ import { LogementsComponent } from './pages/logements/logements.component';
 import { CovoituragesComponent } from './pages/covoiturages/covoiturages.component';
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 import { PageSecreteComponent } from './pages/page-secrete/page-secrete.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PageSecreteComponent } from './pages/page-secrete/page-secrete.componen
   ],
   imports: [
     CommonModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    HttpClientModule
   ]
 })
 export class LayoutModule { }

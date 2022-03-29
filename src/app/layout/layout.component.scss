@@ -1,12 +1,12 @@
 .header {
-  background-color: #006338;
+  background-color: #fff;
   height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 15px;
   align-items: center;
-  border-bottom: 2px solid #b36700;
+  border-bottom: 2px solid #006338;
   .logo {
     .logo-title {
       @media (max-width: 768px) {
@@ -15,7 +15,7 @@
       font-family: "Tangerine", cursive;
       font-size: 30px;
       text-transform: capitalize;
-      color: #ffffd4;
+      color: #006338;
       &:hover {
         cursor: pointer;
       }
@@ -27,7 +27,7 @@
       font-family: "Tangerine", cursive;
       font-size: 30px;
       text-transform: capitalize;
-      color: #ffffd4;
+      color: #006338;
       &:hover {
         cursor: pointer;
       }
@@ -48,12 +48,9 @@
           margin-left: 20px;
           a {
             text-decoration: none;
-            color: #ffffd4;
+            color: #006338;
             &.active {
               font-weight: bold;
-              color: #b36700;
-              border-bottom: 2px solid #b36700;
-              padding-bottom: 5px;
             }
           }
         }
@@ -71,7 +68,7 @@
           margin-left: 20px;
           a {
             text-decoration: none;
-            color: #ffffd4;
+            color: #006338;
             font-size: 25px;
             &.active {
               font-weight: bold;
