@@ -20,7 +20,7 @@
 .planning-item {
   width: 100%;
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   &:nth-child(odd) {
     padding-right: calc(50% + 30px);
   }
@@ -48,9 +48,11 @@
 }
 .planning-content {
   background-color: #fff;
-  border: 1px solid #006338;
+  border: 2px solid #006338;
   display: flex;
   min-height: 200px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   @media (min-width: 769px) {
     flex-direction: row;
   }

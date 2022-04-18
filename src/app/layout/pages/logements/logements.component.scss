@@ -12,8 +12,12 @@
         font-family: "EB Garamond", serif;
         margin: 0;
         background-color: #fff;
-        border:1px solid #006338;
-        font-weight: 500;
+        border: 2px solid #006338;
+        border-top: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                font-weight: 500;
         padding: 7px 0px;
         color: #006338;
       }

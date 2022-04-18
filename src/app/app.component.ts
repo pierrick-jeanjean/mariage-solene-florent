@@ -5,9 +5,9 @@ import { NgxSpinnerService } from 'ngx-spinner';
   selector: 'app-root',
   template: `
     <ngx-spinner
-      bdColor="#383838"
+      bdColor="#006338"
       size="large"
-      color="#ffffd4"
+      color="#b36700"
       type="ball-newton-cradle"
       [fullScreen]="true"
       [disableAnimation]="disableAnimation"
