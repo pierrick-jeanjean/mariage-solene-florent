@@ -12,8 +12,7 @@
         font-family: "EB Garamond", serif;
         margin: 0;
         background-color: #fff;
-        border: 2px solid #006338;
-        border-top: none;
+        border-bottom: 3px solid #006338;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -23,58 +22,22 @@
       }
       .restaurants-item-image {
         &.creperie-hermine {
-          background-image: radial-gradient(
-              ellipse at center,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0) 23%,
-              rgba(0, 0, 0, 0.65) 100%
-            ),
-            url("/assets/creperie-hermine-hover.jpg");
+          background-image: url("/assets/creperie-hermine-hover.jpg");
         }
         &.table-bechet {
-          background-image: radial-gradient(
-              ellipse at center,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0) 23%,
-              rgba(0, 0, 0, 0.65) 100%
-            ),
-            url("/assets/table-bechet-hover.jpg");
+          background-image: url("/assets/table-bechet-hover.jpg");
         }
         &.rusty {
-          background-image: radial-gradient(
-              ellipse at center,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0) 23%,
-              rgba(0, 0, 0, 0.65) 100%
-            ),
-            url("/assets/rusty-hover.jpg");
+          background-image: url("/assets/rusty-hover.jpg");
         }
         &.surf-josephine {
-          background-image: radial-gradient(
-              ellipse at center,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0) 23%,
-              rgba(0, 0, 0, 0.65) 100%
-            ),
-            url("/assets/surf-josephine-hover.jpg");
+          background-image: url("/assets/surf-josephine-hover.jpg");
         }
         &.bistrot-houle {
-          background-image: radial-gradient(
-              ellipse at center,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0) 23%,
-              rgba(0, 0, 0, 0.65) 100%
-            ),
-            url("/assets/bistrot-houle-hover.jpg");
+          background-image: url("/assets/bistrot-houle-hover.jpg");
         }
         &.ville-carree {
-          background-image: radial-gradient(
-              ellipse at center,
-              rgba(0, 0, 0, 0) 0%,
-              rgba(0, 0, 0, 0) 23%,
-              rgba(0, 0, 0, 0.65) 100%
-            ),
-            url("/assets/ville-carree-hover.jpg");
+          background-image: url("/assets/ville-carree-hover.jpg");
         }
         /* Set a specific height */
         height: calc(100% - 27px);
@@ -85,28 +48,6 @@
       }
       &:hover {
         cursor: pointer;
-        h3 {
-          background-color: #b36700;
-          color: #fff;
-        }
-        .creperie-hermine {
-          background-image: url("/assets/creperie-hermine-hover.jpg");
-        }
-        .table-bechet {
-          background-image: url("/assets/table-bechet-hover.jpg");
-        }
-        .rusty {
-          background-image: url("/assets/rusty-hover.jpg");
-        }
-        .surf-josephine {
-          background-image: url("/assets/surf-josephine-hover.jpg");
-        }
-        .bistrot-houle {
-          background-image: url("/assets/bistrot-houle-hover.jpg");
-        }
-        .ville-carree {
-          background-image: url("/assets/ville-carree-hover.jpg");
-        }
       }
     }
   }

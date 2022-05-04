@@ -8,6 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  
   &::before {
     content: "";
     position: absolute;
@@ -48,13 +49,13 @@
 }
 .planning-content {
   background-color: #fff;
-  border: 2px solid #006338;
+  border-bottom: 3px solid #006338;
   display: flex;
-  min-height: 200px;
+  min-height: 300px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   @media (min-width: 769px) {
-    flex-direction: row;
+    flex-direction: column-reverse;
   }
   @media (max-width: 768px) {
     min-height: 400px;
@@ -81,30 +82,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    @media (min-width: 769px) {
-      min-width: 50%;
-    }
-    @media (max-width: 768px) {
-      min-height: 70%;
-    }
+    min-height: 250px;
     flex-grow: 1;
     &.manoir {
-      background-image: radial-gradient(
-        ellipse at center,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) 23%,
-        rgba(0, 0, 0, 0.65) 100%
-      ),
-      url("/assets/manoir.jpg");
+      background-image: url("/assets/manoir.jpg");
     }
     &.presbytere {
-      background-image: radial-gradient(
-        ellipse at center,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0) 23%,
-        rgba(0, 0, 0, 0.65) 100%
-      ),
-      url("/assets/presbytere.jpg");
+      background-image: url("/assets/presbytere.jpg");
     }
   }
 }
@@ -114,25 +98,20 @@
   }
   .planning-items {
     &::before {
-      left: 7px;
+      display: none;
     }
   }
   .planning-item {
     &:nth-child(odd) {
       padding-right: 0;
       text-align: left;
-      padding-left: 37px;
     }
     &:nth-child(even) {
-      padding-left: 37px;
+      padding-left: 1px;
     }
   }
   .planning-dot {
     left: 0;
-  }
-  .planning-content {
-    h3 {
-      font-size: 22px;
-    }
+    display: none;
   }
 }
