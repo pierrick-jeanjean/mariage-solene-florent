@@ -2,11 +2,25 @@
   <h3>Mes covoiturages</h3>
   <div class="covoiturages-items">
     <ng-container *ngFor="let userCovoiturage of userCovoiturages">
-      <div class="covoiturages-item">
+      <div
+        class="covoiturages-item"
+        (click)="userCovoiturage.show_details = !userCovoiturage.show_details"
+      >
         <div
           class="covoiturage-item-image"
           [ngClass]="userCovoiturage.start_location"
-        ></div>
+          [class.show-details]="userCovoiturage.show_details"
+        >
+          <div *ngIf="userCovoiturage.show_details">
+            <p style="text-align: center">
+              Départ : De {{ userCovoiturage.start_location }} à
+              {{ userCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}<br />
+              Arrivée : De {{ userCovoiturage.start_location }} à
+              {{ userCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}<br />
+              Covoitureur : {{ userCovoiturage.covoitureur }}
+            </p>
+          </div>
+        </div>
         <h3>{{ userCovoiturage.start_location }}</h3>
       </div>
     </ng-container>
@@ -24,7 +38,18 @@
         <div
           class="covoiturage-item-image"
           [ngClass]="allCovoiturage.start_location"
-        ></div>
+          [class.show-details]="allCovoiturage.show_details"
+        >
+          <div *ngIf="allCovoiturage.show_details">
+            <p style="text-align: center">
+              Départ : De {{ allCovoiturage.start_location }} à
+              {{ allCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}<br />
+              Arrivée : De {{ allCovoiturage.end_location }} à
+              {{ allCovoiturage.end_date | date: "dd/MM/yyyy hh:mm" }}<br />
+              Covoitureur : {{ allCovoiturage.covoitureur }}
+            </p>
+          </div>
+        </div>
         <h3>{{ allCovoiturage.start_location }}</h3>
       </div>
     </ng-container>

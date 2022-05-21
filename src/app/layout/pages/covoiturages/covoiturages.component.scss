@@ -84,6 +84,10 @@
         }
         &.Lyon {
           background-image: url("/assets/lyon.jpg");
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/lyon.jpg");
+            color: white;
+          }
         }
         /* Set a specific height */
         height: calc(100% - 27px);
