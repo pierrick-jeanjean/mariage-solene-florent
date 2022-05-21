@@ -1,14 +1,14 @@
 /* responsive */
 .planning-section {
-  min-height: 100vh;
+  min-height: calc(100vh - 112px);
+  padding: 20px;
   background-color: #fff;
-  padding: 30px;
 }
 .planning-items {
   display: flex;
   flex-wrap: wrap;
   position: relative;
-  
+
   &::before {
     content: "";
     position: absolute;
@@ -110,7 +110,7 @@
       padding-left: 1px;
     }
   }
-  .planning-dot {
+  .planning-dot { 
     left: 0;
     display: none;
   }

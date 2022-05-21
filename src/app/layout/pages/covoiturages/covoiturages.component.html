@@ -1,14 +1,41 @@
-<section class="covoiturages-section">
-  <ng-container *ngFor="let co of covoi | keyvalue">
-    <h3 class="ville">{{co.key}}</h3>
-    <div class="covoiturages-items">
-      <div *ngFor="let covoiturage of co.value" class="covoiturages-item">
-        <div class="covoiturages-item-image" [ngClass]="covoiturage.image"></div>
-        <h3>
-          <span class="date">{{covoiturage.startDate | date:'shortDate'}} {{covoiturage.startTime}}</span>
-          <span class="passengers">{{covoiturage.nbPassengersTotal - covoiturage.nbPassengers}} places</span>
-        </h3>
+<section class="main" *ngIf="mailSet; else setMail">
+  <h3>Mes covoiturages</h3>
+  <div class="covoiturages-items">
+    <ng-container *ngFor="let userCovoiturage of userCovoiturages">
+      <div class="covoiturages-item">
+        <div
+          class="covoiturage-item-image"
+          [ngClass]="userCovoiturage.start_location"
+        ></div>
+        <h3>{{ userCovoiturage.start_location }}</h3>
       </div>
+    </ng-container>
+    <div class="covoiturages-item">
+      <div class="covoiturage-item-image">
+        <span class="zmdi zmdi-plus-circle"></span>
+      </div>
+      <h3>Ajouter un covoiturage</h3>
     </div>
-  </ng-container>
+  </div>
+  <h3>Tous les covoiturages</h3>
+  <div class="covoiturages-items">
+    <ng-container *ngFor="let allCovoiturage of allCovoiturages">
+      <div class="covoiturages-item">
+        <div
+          class="covoiturage-item-image"
+          [ngClass]="allCovoiturage.start_location"
+        ></div>
+        <h3>{{ allCovoiturage.start_location }}</h3>
+      </div>
+    </ng-container>
+  </div>
 </section>
+<ng-template #setMail>
+  <section class="set-mail">
+    <div class="set-mail-div">
+      <h3>Entrez votre adresse mail</h3>
+      <input type="text" [(ngModel)]="this.mail" />
+      <button (click)="validateMail()">Valider</button>
+    </div>
+  </section>
+</ng-template>

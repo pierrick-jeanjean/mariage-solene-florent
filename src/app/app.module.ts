@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import '@angular/common/locales/global/fr';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { HttpClientModule } from '@angular/common/http';
 
 // the second parameter 'fr' is optional
 registerLocaleData(localeFr, 'fr');
@@ -18,6 +19,7 @@ registerLocaleData(localeFr, 'fr');
     BrowserAnimationsModule,
     AppRoutingModule,
     NgxSpinnerModule,
+    HttpClientModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent],

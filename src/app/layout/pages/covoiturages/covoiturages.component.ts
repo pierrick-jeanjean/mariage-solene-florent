@@ -1,44 +1,42 @@
-import { Time } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-
-export interface Covoiturage {
-  startLocation: string;
-  startDate: Date;
-  startTime: Time;
-  endLocation: string;
-  endDate: Date;
-  endTime: Time;
-  nbPassengers: number;
-  nbPassengersTotal: number;
-  image: string;
-}
+import { Component } from '@angular/core';
+import { forkJoin } from 'rxjs';
+import { Covoiturage } from './covoiturage.model';
+import { CovoiturageService } from './covoiturage.service';
 
 @Component({
   selector: 'app-covoiturages',
   templateUrl: './covoiturages.component.html',
   styleUrls: ['./covoiturages.component.scss'],
 })
-export class CovoituragesComponent implements OnInit {
-  covoiturages$!: Observable<Array<Covoiturage>>;
-  covoi : Map<string, Array<Covoiturage>> = new Map();
-  constructor(private httpClient: HttpClient) {}
+export class CovoituragesComponent {
+  public mailSet = false;
+  public mail!: string;
+  
+  userCovoiturages!: Array<Covoiturage>;
+  allCovoiturages!: Array<Covoiturage>;
 
-  ngOnInit(): void {
-    this.httpClient.get<Array<Covoiturage>>('/assets/covoiturages.json').subscribe(
-      (covoiturages: Array<Covoiturage>) => {
-        covoiturages.forEach(c => {
-          if (this.covoi.has(c.startLocation)) {
-            this.covoi.get(c.startLocation)?.push(c);
-          } else {
-            let t : Array<Covoiturage> = [];
-            t.push(c);
-            this.covoi.set(c.startLocation, t);
-          }
-        })
-        console.log(this.covoi);
+  constructor(private covoiturageService: CovoiturageService) {}
+
+  public validateMail() {
+    this.covoiturageService.validateMail(this.mail).subscribe((res: boolean) => {
+      if (res) {
+        this.mailSet = res;
+        this.loadStuff();
       }
-    );
+    });
+  }
+
+  public loadStuff() {
+    
+    forkJoin({
+      userCovoiturages: this.covoiturageService.loadUserCovoiturages(this.mail),
+      allCovoiturages: this.covoiturageService.loadAllCovoiturages(this.mail)
+    }).subscribe(
+      (res:any) => {
+        this.userCovoiturages = res.userCovoiturages
+        this.allCovoiturages = res.allCovoiturages
+      }
+    )
+  
   }
 }

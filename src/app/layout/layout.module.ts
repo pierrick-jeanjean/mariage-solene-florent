@@ -10,6 +10,11 @@ import { CovoituragesComponent } from './pages/covoiturages/covoiturages.compone
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 import { PageSecreteComponent } from './pages/page-secrete/page-secrete.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ActivitesComponent } from './pages/activites/activites.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { NgToggleModule } from 'ng-toggle-button';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -20,12 +25,16 @@ import { HttpClientModule } from '@angular/common/http';
     LogementsComponent,
     CovoituragesComponent,
     RestaurantsComponent,
-    PageSecreteComponent
+    PageSecreteComponent,
+    ActivitesComponent
   ],
   imports: [
     CommonModule,
     LayoutRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    IvyCarouselModule,
+    NgToggleModule,
+    FormsModule
   ]
 })
 export class LayoutModule { }

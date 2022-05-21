@@ -5,14 +5,14 @@ import { NgxSpinnerService } from 'ngx-spinner';
   selector: 'app-root',
   template: `
     <ngx-spinner
-      bdColor="#006338"
+      bdColor="#fff"
       size="large"
-      color="#b36700"
+      color="#006338"
       type="ball-newton-cradle"
       [fullScreen]="true"
       [disableAnimation]="disableAnimation"
     >
-      <p style="color: #ffffd4; font-size: 24px;">Chargement...</p>
+      <p style="color: #b36700; font-size: 24px;">Chargement...</p>
     </ngx-spinner>
     <router-outlet></router-outlet>
   `,
