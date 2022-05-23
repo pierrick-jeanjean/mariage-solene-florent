@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-activites',
@@ -22,26 +22,40 @@ export class ActivitesComponent implements AfterViewInit {
     { path: './assets/plage-lancieux.jpg' },
   ];
 
-  public carouselWidth = 0;
-  public carouselHeight = 0;
+  public carouselHeight = window.innerHeight - 246;
 
   circuit1Text = 'Les menhirs de Monteneuf';
   circuit2Text = 'Bécherel';
   plagesText = 'Plage de Dinard';
   showCarousels = false;
 
-  @ViewChild('test') elementView!: ElementRef;
+  carousel1active = true;
+  carousel2active = false;
+  carousel3active = false;
 
+  @ViewChild('test') elementView!: ElementRef;
+  images!: Array<any>;
+  
   ngAfterViewInit(): void {
-    let sectionWidth = this.elementView.nativeElement.offsetWidth;
-    let ratioHeight = sectionWidth / 1.5;
-    this.carouselHeight = (ratioHeight * 0.75) < (this.elementView.nativeElement.offsetWidth * 0.75) ? (ratioHeight * 0.75) : (this.elementView.nativeElement.offsetWidth * 0.75);
-    if (this.carouselHeight <= 200) {
-      this.carouselHeight = 200;
-    }
-    if (this.carouselHeight >= 500) {
-      this.carouselHeight = 500;
-    }
     this.showCarousels = true;
+  }
+
+  activateCarousel1() {
+    this.carousel1active = true;
+    this.carousel2active = false; 
+    this.carousel3active = false;
+    this.images = this.circuit1;
+  }
+  activateCarousel2() {
+    this.carousel1active = false;
+    this.carousel2active = true; 
+    this.carousel3active = false;
+    this.images = this.circuit2;
+  }
+  activateCarousel3() {
+    this.carousel1active = false;
+    this.carousel2active = false; 
+    this.carousel3active = true;
+    this.images = this.plages;
   }
 }

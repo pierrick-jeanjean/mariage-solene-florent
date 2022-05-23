@@ -5,5 +5,7 @@ export interface Covoiturage {
     end_location: string;
     start_date: Date;
     end_date: Date;
+    aller: boolean;
+    retour: boolean;
     show_details: boolean;
 }

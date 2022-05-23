@@ -12,45 +12,50 @@
           [class.show-details]="userCovoiturage.show_details"
         >
           <div *ngIf="userCovoiturage.show_details">
+            <h3 style="border: 1px solid #fff;font-weight: 500; background-color: #b36700;color: white; text-align: center;">{{userCovoiturage.aller ? 'Aller' : ''}} {{userCovoiturage.retour ? 'Retour' : ''}}</h3>
             <p style="text-align: center">
-              Départ : De {{ userCovoiturage.start_location }} à
-              {{ userCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}<br />
-              Arrivée : De {{ userCovoiturage.start_location }} à
-              {{ userCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}<br />
-              Covoitureur : {{ userCovoiturage.covoitureur }}
+              De {{userCovoiturage.start_location}} vers {{userCovoiturage.end_location}} <br/>
+              Le {{userCovoiturage.start_date | date:"dd/MM/yyyy hh:mm"}} <br/><br/>
+              Pour plus de détails : {{ userCovoiturage.covoitureur }}
             </p>
           </div>
         </div>
-        <h3>{{ userCovoiturage.start_location }}</h3>
+        <div class="bottom-title">
+          {{ userCovoiturage.start_location }}
+          <small>{{
+            userCovoiturage.start_date | date: "dd/MM/yyyy hh:mm"
+          }}</small>
+        </div>
       </div>
     </ng-container>
-    <div class="covoiturages-item">
-      <div class="covoiturage-item-image">
-        <span class="zmdi zmdi-plus-circle"></span>
-      </div>
-      <h3>Ajouter un covoiturage</h3>
-    </div>
   </div>
-  <h3>Tous les covoiturages</h3>
+  <h3 class="second">Tous les covoiturages</h3>
   <div class="covoiturages-items">
     <ng-container *ngFor="let allCovoiturage of allCovoiturages">
-      <div class="covoiturages-item">
+      <div
+        class="covoiturages-item"
+        (click)="allCovoiturage.show_details = !allCovoiturage.show_details"
+      >
         <div
           class="covoiturage-item-image"
           [ngClass]="allCovoiturage.start_location"
           [class.show-details]="allCovoiturage.show_details"
         >
           <div *ngIf="allCovoiturage.show_details">
+            <h3 style="border: 1px solid #fff;font-weight: 500; background-color: #b36700;color: white; text-align: center;">{{allCovoiturage.aller ? 'Aller' : ''}} {{allCovoiturage.retour ? 'Retour' : ''}}</h3>
             <p style="text-align: center">
-              Départ : De {{ allCovoiturage.start_location }} à
-              {{ allCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}<br />
-              Arrivée : De {{ allCovoiturage.end_location }} à
-              {{ allCovoiturage.end_date | date: "dd/MM/yyyy hh:mm" }}<br />
-              Covoitureur : {{ allCovoiturage.covoitureur }}
+              De {{allCovoiturage.start_location}} vers {{allCovoiturage.end_location}} <br/>
+              Le {{allCovoiturage.start_date | date:"dd/MM/yyyy hh:mm"}} <br/><br/>
+              Pour plus de détails : {{ allCovoiturage.covoitureur }}
             </p>
           </div>
         </div>
-        <h3>{{ allCovoiturage.start_location }}</h3>
+        <div class="bottom-title">
+          {{ allCovoiturage.start_location }}
+          <small>{{
+            allCovoiturage.start_date | date: "dd/MM/yyyy hh:mm"
+          }}</small>
+        </div>
       </div>
     </ng-container>
   </div>
@@ -60,6 +65,7 @@
     <div class="set-mail-div">
       <h3>Entrez votre adresse mail</h3>
       <input type="text" [(ngModel)]="this.mail" />
+      <p *ngIf="errorMessage" style="color: red; font-size: 11px">Covoitureur non connu...</p>
       <button (click)="validateMail()">Valider</button>
     </div>
   </section>

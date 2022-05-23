@@ -15,6 +15,8 @@ export class CovoituragesComponent {
   userCovoiturages!: Array<Covoiturage>;
   allCovoiturages!: Array<Covoiturage>;
 
+  errorMessage = false;
+
   constructor(private covoiturageService: CovoiturageService) {}
 
   public validateMail() {
@@ -22,6 +24,8 @@ export class CovoituragesComponent {
       if (res) {
         this.mailSet = res;
         this.loadStuff();
+      } else {
+        this.errorMessage = true;
       }
     });
   }
@@ -30,7 +34,7 @@ export class CovoituragesComponent {
     
     forkJoin({
       userCovoiturages: this.covoiturageService.loadUserCovoiturages(this.mail),
-      allCovoiturages: this.covoiturageService.loadAllCovoiturages(this.mail)
+      allCovoiturages: this.covoiturageService.loadAllCovoiturages()
     }).subscribe(
       (res:any) => {
         this.userCovoiturages = res.userCovoiturages
@@ -38,5 +42,9 @@ export class CovoituragesComponent {
       }
     )
   
+  }
+
+  public addCovoiturage() {
+    
   }
 }

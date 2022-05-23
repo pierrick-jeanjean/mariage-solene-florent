@@ -7,18 +7,25 @@ import { Covoiturage } from './covoiturage.model';
   providedIn: 'root'
 })
 export class CovoiturageService {
+
+  serverUrl = 'https://mariage-solene-florent-api.azurewebsites.net';
+
   constructor(private httpClient: HttpClient) { }
 
   validateMail(mail: string): Observable<boolean>{
-    return this.httpClient.get<boolean>('http://localhost:8080/covoitureur?mail='+mail);
+    return this.httpClient.get<boolean>(this.serverUrl + '/covoitureur?mail='+mail);
   }
 
   loadUserCovoiturages(mail: string): Observable<Array<Covoiturage>> {
-    return this.httpClient.get<Array<Covoiturage>>('http://localhost:8080/covoiturages?mail='+mail);
+    return this.httpClient.get<Array<Covoiturage>>(this.serverUrl + '/covoiturages/'+mail);
   }
 
-  loadAllCovoiturages(mail: string): Observable<Array<Covoiturage>> {
-    return this.httpClient.get<Array<Covoiturage>>('http://localhost:8080/covoiturages/all?mail='+mail);
+  loadAllCovoiturages(): Observable<Array<Covoiturage>> {
+    return this.httpClient.get<Array<Covoiturage>>(this.serverUrl + '/covoiturages');
+  }
+
+  saveCovoiturage(covoiturage: Covoiturage): Observable<void> {
+    return this.httpClient.post<void>(this.serverUrl + '/covoiturages', covoiturage);
   }
 
 }

@@ -47,7 +47,6 @@
     @media (max-width: 425px) {
       text-align: center;
     }
-    margin-top: 35px;
     font-family: "EB Garamond", serif;
     color: #006338;
     font-weight: 500;
@@ -58,32 +57,50 @@
   .covoiturages-items {
     display: grid;
     grid-gap: 30px;
+    &:last-child {
+      padding-bottom: 20px;
+    }
     .covoiturages-item {
       min-height: 210px;
-      h3 {
+      .bottom-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        small {
+          font-size: 11px;
+        }
         text-align: center;
         font-family: "EB Garamond", serif;
         margin: 0;
         background-color: #fff;
-        border-bottom: 3px solid #006338;
+        border-bottom: 3px solid #b36700;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         font-weight: 500;
-        padding: 7px 0px;
+        padding: 7px 10px;
         color: #006338;
       }
       .covoiturage-item-image {
-        background-color: #cacaca;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        background-color: #f4f4f4;
+        text-align: left;
+        font-size: 0.9em;
+        padding: 5px 15px;
+        select {
+          width: 100%;
+        }
+        input {
+          width: 98%;
+        }
         .zmdi {
           font-size: 30px;
           color: #006338;
         }
         &.Lyon {
           background-image: url("/assets/lyon.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
           &.show-details {
             background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/lyon.jpg");
             color: white;
@@ -115,4 +132,8 @@
   .covoiturages-items {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.second {
+  margin-top: 40px;
 }
