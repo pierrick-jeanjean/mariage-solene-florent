@@ -28,4 +28,8 @@ export class CovoiturageService {
     return this.httpClient.post<void>(this.serverUrl + '/covoiturages', covoiturage);
   }
 
+  deleteCovoiturage(id: number): Observable<void> {
+    return this.httpClient.delete<void>(this.serverUrl + '/covoiturages/'+id);
+  }
+
 }

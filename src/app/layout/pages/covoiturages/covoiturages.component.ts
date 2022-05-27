@@ -44,7 +44,12 @@ export class CovoituragesComponent {
   
   }
 
-  public addCovoiturage() {
-    
+  public deleteCovoiturage(id: number) {
+    this.covoiturageService.deleteCovoiturage(id).subscribe(
+      () => {
+        this.loadStuff();
+      }
+    )
   }
+
 }

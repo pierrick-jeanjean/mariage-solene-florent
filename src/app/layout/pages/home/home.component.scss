@@ -14,14 +14,15 @@ background-size: cover;
     justify-content: center;
     .main-button {
       margin-bottom: 60px;
-      padding: 10px 25px;
-      border: 1px solid #ffffd4;
-      font-size: 20px;
-      background-color: #006338;
-      color: #ffffd4;
+      padding: 60px;
+      background-image: url('/assets/logo.jpg');
+      background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+      border: 1px solid #fff;
+      border-radius: 5px;
       &:hover {
         cursor: pointer;
-        background-color: #b36700;
       }
     }
   }

@@ -1,19 +1,25 @@
 .activites-section {
-  background-color: fff;
+  background-color: #fff;
   padding: 20px;
   min-height: calc(100vh - 112px);
-  .navigation-carousel {
-    button {
-      margin-right: 10px;
+  .carousel-navigation {
+    text-align: center;
+    font-size: 18px;
+    color: #006338;
+    .carousel-navigation-button-left, .carousel-navigation-button-right {
       background-color: transparent;
-      border:none;
       color: #006338;
-      padding: 7px 15px;
-      cursor: pointer;
-      &.active {
-        background-color: #006338;
-        color: #fff;
-      }
+      border:none;
+      font-size: 18px;
+      &:hover {
+        cursor: pointer;
+      } 
+    }
+    .carousel-navigation-button-left {
+      margin-right: 15px;
+    }
+    .carousel-navigation-button-right {
+      margin-left: 15px;
     }
   }
   .carousel-wrapper {

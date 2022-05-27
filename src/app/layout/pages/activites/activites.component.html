@@ -1,10 +1,35 @@
 <section #test class="activites-section">
-  <div class="navigation-carousel">
-    <button (click)="activateCarousel1()" [class.active]="this.carousel1active">Circuit 1</button>
-    <button (click)="activateCarousel2()" [class.active]="this.carousel2active">Circuit 2</button>
-    <button (click)="activateCarousel3()" [class.active]="this.carousel3active">Les plages</button>
+  <div class="carousel-navigation">
+    <button *ngIf="this.carousel1active" class="carousel-navigation-button-left" (click)="displayCarousel4()">
+      <span class="zmdi zmdi-skip-previous"></span>
+    </button>
+    <button *ngIf="this.carousel2active" class="carousel-navigation-button-left" (click)="displayCarousel1()">
+      <span class="zmdi zmdi-skip-previous"></span>
+    </button>
+    <button *ngIf="this.carousel3active" class="carousel-navigation-button-left" (click)="displayCarousel2()">
+      <span class="zmdi zmdi-skip-previous"></span>
+    </button>
+    <button *ngIf="this.carousel4active" class="carousel-navigation-button-left" (click)="displayCarousel3()">
+      <span class="zmdi zmdi-skip-previous"></span>
+    </button>
+    {{this.carousel1active ? 'Circuit "Nature"' : ''}}
+    {{this.carousel2active ? 'Circuit "Villages"' : ''}}
+    {{this.carousel3active ? 'Les plages' : ''}}
+    {{this.carousel4active ? 'A proximité du gîte' : ''}}
+    <button *ngIf="this.carousel1active" class="carousel-navigation-button-right" (click)="displayCarousel2()">
+      <span class="zmdi zmdi-skip-next"></span>
+    </button>
+    <button *ngIf="this.carousel2active" class="carousel-navigation-button-right" (click)="displayCarousel3()">
+      <span class="zmdi zmdi-skip-next"></span>
+    </button>
+    <button *ngIf="this.carousel3active" class="carousel-navigation-button-right" (click)="displayCarousel4()">
+      <span class="zmdi zmdi-skip-next"></span>
+    </button>
+    <button *ngIf="this.carousel4active" class="carousel-navigation-button-right" (click)="displayCarousel1()">
+      <span class="zmdi zmdi-skip-next"></span>
+    </button>
   </div>
-  <div class="carousel-wrapper">
+  <div class="carousel-wrapper"> 
     <carousel *ngIf="this.carousel1active"
       [images]="circuit1"
       [height]="carouselHeight"
@@ -23,15 +48,23 @@
       [dots]="true"
       cellWidth="100%"
     ></carousel>
+    <carousel *ngIf="this.carousel4active"
+      [images]="gite"
+      [height]="carouselHeight"
+      [dots]="true"
+      cellWidth="100%"
+    ></carousel>
     <h3>
-      {{this.carousel1active ? 'Circuit 1' : ''}}
-      {{this.carousel2active ? 'Circuit 2' : ''}}
+      {{this.carousel1active ? 'Circuit "Nature"' : ''}}
+      {{this.carousel2active ? 'Circuit "Villages"' : ''}}
       {{this.carousel3active ? 'Les plages' : ''}}
+      {{this.carousel4active ? 'A proximité du gîte' : ''}}
       <br />
       <small>
-        {{this.carousel1active ? 'Les menhirs de Monteneuf, La fôret de Brocéliande' : ''}}
+        {{this.carousel1active ? 'Les menhirs de Monteneuf, La fôret de Brocéliande, Dinan' : ''}}
         {{this.carousel2active ? 'Bécherel, Saint-Suliac, Côte Emeraude' : ''}}
         {{this.carousel3active ? 'Dinard, Saint-Lunaire, Saint-Briac, Lancieux' : ''}}
+        {{this.carousel4active ? 'Saint-Just, La Gacilly': ''}}
       </small>
     </h3>
   </div>
