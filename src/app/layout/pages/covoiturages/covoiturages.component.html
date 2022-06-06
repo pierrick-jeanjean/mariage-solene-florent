@@ -12,26 +12,105 @@
           [class.show-details]="userCovoiturage.show_details"
         >
           <div *ngIf="userCovoiturage.show_details">
-            <h3 style="border: 1px solid #fff;font-weight: 500; background-color: #b36700;color: white; text-align: center;">{{userCovoiturage.aller ? 'Aller' : ''}} {{userCovoiturage.retour ? 'Retour' : ''}}</h3>
+            <h3
+              style="
+                border: 1px solid #fff;
+                font-weight: 500;
+                background-color: #b36700;
+                color: white;
+                text-align: center;
+              "
+            >
+              {{ userCovoiturage.aller ? "Aller" : "" }}
+              {{ userCovoiturage.retour ? "Retour" : "" }}
+            </h3>
             <p style="text-align: center">
-              De {{userCovoiturage.start_location}} vers {{userCovoiturage.end_location}} <br/>
-              Le {{userCovoiturage.start_date | date:"dd/MM/yyyy hh:mm"}} <br/><br/>
-              Pour plus de détails : {{ userCovoiturage.covoitureur }}<br/><br/>
-              <button (click)="deleteCovoiturage(userCovoiturage.id)" style="background-color: rgb(173, 0, 0); color: #fff; padding: 7px 15px">Supprimer</button>
+              De {{ userCovoiturage.start_location }} vers
+              {{ userCovoiturage.end_location }} <br />
+              Le {{ userCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}
+              <br /><br />
+              Pour plus de détails : {{ userCovoiturage.covoitureur
+              }}<br /><br />
+              <button
+                (click)="deleteCovoiturage(userCovoiturage.id)"
+                style="
+                  border: none;
+                  background-color: rgb(173, 0, 0);
+                  color: #fff;
+                  padding: 7px 15px;
+                "
+              >
+                Supprimer
+              </button>
             </p>
           </div>
         </div>
         <div class="bottom-title">
-          {{ userCovoiturage.start_location }}
+          De {{ userCovoiturage.start_location }}
           <small>{{
             userCovoiturage.start_date | date: "dd/MM/yyyy hh:mm"
           }}</small>
         </div>
       </div>
     </ng-container>
+    <div class="covoiturages-item">
+      <div class="covoiturage-item-image">
+        <div>
+          <label>Lieu de départ</label>
+          <select  [(ngModel)]="start_location">
+            <option value="">--- Choisir une ville de départ --</option>
+            <option value="Brest">Brest</option>
+            <option value="Chantilly">Chantilly</option>
+            <option value="Genêve">Genêve</option>
+            <option value="La-Roche-sur-Yon">La-Roche-sur-Yon</option>
+            <option value="La-Rochelle">La-Rochelle</option>
+            <option value="Lille">Lille</option>
+            <option value="Lyon">Lyon</option>
+            <option value="Marseille">Marseille</option>
+            <option value="Paris">Paris</option>
+            <option value="Pipriac">Pipriac</option>
+            <option value="Rennes">Rennes</option>
+            <option value="Saint-Briac-sur-Mer">Saint-Briac-sur-Mer</option>
+            <option value="Zurich">Zurich</option>
+          </select>
+          <br />
+          <label>Lieu d'arrivée</label>
+          <select [(ngModel)]="end_location">
+            <option value="">--- Choisir une ville d'arrivée --</option>
+            <option value="Brest">Brest</option>
+            <option value="Chantilly">Chantilly</option>
+            <option value="Genêve">Genêve</option>
+            <option value="La-Roche-sur-Yon">La-Roche-sur-Yon</option>
+            <option value="La-Rochelle">La-Rochelle</option>
+            <option value="Lille">Lille</option>
+            <option value="Lyon">Lyon</option>
+            <option value="Marseille">Marseille</option>
+            <option value="Paris">Paris</option>
+            <option value="Pipriac">Pipriac</option>
+            <option value="Rennes">Rennes</option>
+            <option value="Saint-Briac-sur-Mer">Saint-Briac-sur-Mer</option>
+            <option value="Zurich">Zurich</option>
+          </select>
+          <label> Heure de départ </label>
+          <input type="datetime-local"  [(ngModel)]="start_date" />
+          <label> Heure d'arrivée </label>
+          <input type="datetime-local" [(ngModel)]="end_date" />
+          <label>Aller ou retour</label>
+          <select [(ngModel)]="aller_retour">
+            <option value="">--- Choisir aller ou retour --</option>
+            <option value="aller">Aller</option>
+            <option value="retour">Retour</option>
+          </select>
+        </div>
+      </div>
+      <div class="bottom-title-add" (click)="saveCovoiturage()">Ajouter un covoiturage</div>
+    </div>
   </div>
   <h3 class="second">Tous les covoiturages</h3>
   <div class="covoiturages-items">
+    <span style="color:#006338" *ngIf="allCovoiturages.length === 0">
+      Aucun covoiturage disponible pour le moment
+    </span>
     <ng-container *ngFor="let allCovoiturage of allCovoiturages">
       <div
         class="covoiturages-item"
@@ -43,16 +122,29 @@
           [class.show-details]="allCovoiturage.show_details"
         >
           <div *ngIf="allCovoiturage.show_details">
-            <h3 style="border: 1px solid #fff;font-weight: 500; background-color: #b36700;color: white; text-align: center;">{{allCovoiturage.aller ? 'Aller' : ''}} {{allCovoiturage.retour ? 'Retour' : ''}}</h3>
+            <h3
+              style="
+                border: 1px solid #fff;
+                font-weight: 500;
+                background-color: #b36700;
+                color: white;
+                text-align: center;
+              "
+            >
+              {{ allCovoiturage.aller ? "Aller" : "" }}
+              {{ allCovoiturage.retour ? "Retour" : "" }}
+            </h3>
             <p style="text-align: center">
-              De {{allCovoiturage.start_location}} vers {{allCovoiturage.end_location}} <br/>
-              Le {{allCovoiturage.start_date | date:"dd/MM/yyyy hh:mm"}} <br/><br/>
+              De {{ allCovoiturage.start_location }} vers
+              {{ allCovoiturage.end_location }} <br />
+              Le {{ allCovoiturage.start_date | date: "dd/MM/yyyy hh:mm" }}
+              <br /><br />
               Pour plus de détails : {{ allCovoiturage.covoitureur }}
             </p>
           </div>
         </div>
         <div class="bottom-title">
-          {{ allCovoiturage.start_location }}
+          De {{ allCovoiturage.start_location }}
           <small>{{
             allCovoiturage.start_date | date: "dd/MM/yyyy hh:mm"
           }}</small>
@@ -66,7 +158,9 @@
     <div class="set-mail-div">
       <h3>Entrez votre adresse mail</h3>
       <input type="text" [(ngModel)]="this.mail" />
-      <p *ngIf="errorMessage" style="color: red; font-size: 11px">Covoitureur non connu...</p>
+      <p *ngIf="errorMessage" style="color: red; font-size: 11px">
+        Covoitureur non connu...
+      </p>
       <button (click)="validateMail()">Valider</button>
     </div>
   </section>

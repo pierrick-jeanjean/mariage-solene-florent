@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Covoiturage } from './covoiturage.model';
+import { SaveCovoiturage } from './save-covoiturage.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class CovoiturageService {
     return this.httpClient.get<Array<Covoiturage>>(this.serverUrl + '/covoiturages');
   }
 
-  saveCovoiturage(covoiturage: Covoiturage): Observable<void> {
+  saveCovoiturage(covoiturage: SaveCovoiturage): Observable<void> {
     return this.httpClient.post<void>(this.serverUrl + '/covoiturages', covoiturage);
   }
 

@@ -6,6 +6,7 @@
   align-items: center;
   .set-mail-div {
     border-radius: 5px;
+    border-bottom: 3px solid #b36700;
     text-align: center;
     h3 {
       text-align: center;
@@ -61,7 +62,7 @@
       padding-bottom: 20px;
     }
     .covoiturages-item {
-      min-height: 229px;
+      min-height: 275px;
       .bottom-title {
         display: flex;
         justify-content: space-between;
@@ -81,11 +82,31 @@
         padding: 7px 10px;
         color: #006338;
       }
+      .bottom-title-add {
+        text-align: center;
+        font-family: "EB Garamond", serif;
+        margin: 0;
+        background-color: #fff;
+        border-bottom: 3px solid #b36700;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        font-weight: 500;
+        padding: 7px 10px;
+        color: #006338;
+        &:hover {
+          background-color: #b36700;
+          color: #fff
+        }
+      }
       .covoiturage-item-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #f4f4f4;
         text-align: left;
         font-size: 0.9em;
-        padding: 5px 15px;
+        padding: 0px 25px;
         .top-actions-bar {
           position: relative;
           top: 0;
@@ -93,11 +114,77 @@
           background-color: red;
           width: 100%;
         }
-        select {
+        div {
           width: 100%;
+          label {
+            margin-bottom: 10px;
+          }
+          select {
+            width: 100%;
+          }
+          input {
+            width: 98%;
+          }
         }
-        input {
-          width: 98%;
+        &.Brest {
+          background-image: url("/assets/brest.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/brest.jpg");
+            color: white;
+          }
+        }
+        &.Chantilly {
+          background-image: url("/assets/chantilly.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/chantilly.jpg");
+            color: white;
+          }
+        }
+        &.Genêve {
+          background-image: url("/assets/geneve.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/geneve.jpg");
+            color: white;
+          }
+        }
+        &.La-Roche-sur-Yon {
+          background-image: url("/assets/roche-yon.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/roche-yon.jpg");
+            color: white;
+          }
+        }
+        &.La-Rochelle {
+          background-image: url("/assets/rochelle.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/rochelle.jpg");
+            color: white;
+          }
+        }
+        &.Lille {
+          background-image: url("/assets/lille.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/lille.jpg");
+            color: white;
+          }
         }
         &.Lyon {
           background-image: url("/assets/lyon.jpg");
@@ -106,6 +193,66 @@
           align-items: center;
           &.show-details {
             background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/lyon.jpg");
+            color: white;
+          }
+        }
+        &.Marseille {
+          background-image: url("/assets/marseille.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/marseille.jpg");
+            color: white;
+          }
+        }
+        &.Paris {
+          background-image: url("/assets/paris.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/paris.jpg");
+            color: white;
+          }
+        }
+        &.Pipriac {
+          background-image: url("/assets/pipriac.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/pipriac.jpg");
+            color: white;
+          }
+        }
+        &.Rennes {
+          background-image: url("/assets/rennes.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/rennes.jpg");
+            color: white;
+          }
+        }
+        &.Saint-Briac-sur-Mer {
+          background-image: url("/assets/saint-briac-mer.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/saint-briac-mer.jpg");
+            color: white;
+          }
+        }
+        &.Zurich {
+          background-image: url("/assets/zurich.jpg");
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &.show-details {
+            background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("/assets/zurich.jpg");
             color: white;
           }
         }

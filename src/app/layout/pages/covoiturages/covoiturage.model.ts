@@ -7,5 +7,5 @@ export interface Covoiturage {
     end_date: Date;
     aller: boolean;
     retour: boolean;
-    show_details: boolean;
+    show_details?: boolean;
 }
