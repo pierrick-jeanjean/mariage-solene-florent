@@ -12,7 +12,6 @@ import { PageSecreteComponent } from './pages/page-secrete/page-secrete.componen
 import { HttpClientModule } from '@angular/common/http';
 import { ActivitesComponent } from './pages/activites/activites.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-import { NgToggleModule } from 'ng-toggle-button';
 import { FormsModule } from '@angular/forms';
 
 
@@ -33,7 +32,6 @@ import { FormsModule } from '@angular/forms';
     LayoutRoutingModule,
     HttpClientModule,
     IvyCarouselModule,
-    NgToggleModule,
     FormsModule
   ]
 })
