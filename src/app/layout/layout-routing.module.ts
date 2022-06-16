@@ -39,7 +39,7 @@ const routes: Routes = [
         component: LogementsComponent,
       },
       {
-        path: 'page-secrete',
+        path: 'crepe',
         component: PageSecreteComponent
       }
     ],
